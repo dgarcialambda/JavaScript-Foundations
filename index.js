@@ -40,8 +40,9 @@ let denominator = Math.pow( newMonthlyRate, periods)-1;
 
 let monthlyRate = (numerator/denominator)*principle;
 
-return name;
-return monthlyRate;
+monthlyRate = Math.round(monthlyRate * 100) / 100;
+
+return name + monthlyRate
 
 
 
@@ -65,8 +66,28 @@ function mortgageCalculator(principle, interestRate, years) {
 For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
+mortgageCalculator(3000000, 0.3, 120 ) {
+    let name = 'Damaris';
 
-console.log(mortgageCalculator(2000000, 0.05, 30 ));
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+  
+    let newInterestRate = monthlyInterestRate + 1;
+  
+  
+    let numerator = Math.pow(newInterestRate, periods) * monthlyInterestRate;
+    let denominator = Math.pow(newInterestRate, periods) - 1;
+  
+    let monthlyRate = (numerator / denominator) * principle;
+  
+    monthlyRate = Math.round(monthlyRate * 100) / 100;
+    
+    return name + "  " + monthlyRate
+  
+  
+  }
+  console.log(mortgageCalculator(300000, 0.3, 120));
+}
 
 
 
@@ -77,7 +98,7 @@ console.log(mortgageCalculator(2000000, 0.05, 30 ));
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
-let creditScore = 720;
+let creditScore = 725;
 
 if (creditScore > 740) {
     console.log ('Interest Rate Drops By 0.5%');
@@ -105,7 +126,25 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-function variableInterestRate (2000000, 0.)
+function variableInterestRate (principle, interestRate, years) {
+    
+  
+    for (let i = 0; i < 10; i++ ) {
+      
+      let name = 'Damaris'
+      let monthlyInterestRate = interestRate / 12;
+      let periods = years * 12;
+      let newInterestRate = monthlyInterestRate + 1;
+      let numerator = Math.pow(newInterestRate, periods) * monthlyInterestRate;
+      let denominator = Math.pow(newInterestRate, periods) - 1;
+      let monthlyRate = (numerator / denominator) * principle;
+      monthlyRate = Math.round(monthlyRate * 100) / 100;
+      console.log(name + ", with an interest rate of  , your monthly rate is " +  monthlyRate)
+    }
+  }
+variableInterestRate(200000, 0.04, 30)
+
+
 
 
 
