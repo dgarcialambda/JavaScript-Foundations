@@ -3,7 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-
+let principal = 200000;
+let interestRate = 0.05; 
+let years = 30;
+let name = "Damaris Garcia";
 
 
 
@@ -15,6 +18,8 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 
 Create another variable called `periods` and give it the value of years*12.
 */
+let monthlyInterestRate = interestRate / 12;
+let periods = years * 12;
 
 
 
@@ -28,7 +33,15 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+let newMonthlyRate = monthlyInterestRate + 1;
 
+let numerator = Math.pow( newMonthlyRate, periods)*monthlyInterestRate;
+let denominator = Math.pow( newMonthlyRate, periods)-1;
+
+let monthlyRate = (numerator/denominator)*principle;
+
+return name;
+return monthlyRate;
 
 
 
@@ -37,6 +50,10 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageCalculator(principle, interestRate, years) {
+
+}
+
 
 
 
@@ -49,6 +66,7 @@ For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
+console.log(mortgageCalculator(2000000, 0.05, 30 ));
 
 
 
@@ -58,6 +76,16 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
+
+let creditScore = 720;
+
+if (creditScore > 740) {
+    console.log ('Interest Rate Drops By 0.5%');
+} else if (creditScore < 660) {
+    console.log('Interest Rate Increases By 0.5%')
+} else if (creditScore <= 660 || creditScore <= 740 ) {
+    console.log('Interest Rate Does Not Change')
+}
 
 
 
@@ -77,7 +105,7 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-
+function variableInterestRate (2000000, 0.)
 
 
 
@@ -95,3 +123,9 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+
+
+
+
+
